@@ -1,27 +1,9 @@
-# OceanDataApi
+Projeto de Filtragem de Regiões
+Este projeto é uma aplicação web que permite aos usuários filtrar regiões com base em vários critérios ambientais. Ele foi construído usando Angular.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Funcionalidades
+Filtragem de Regiões: Os usuários podem filtrar regiões com base em vários critérios, incluindo temperatura da água, nível de poluição e pH. Os usuários inserem seus critérios de filtragem em campos de entrada e clicam no botão "Search" para filtrar as regiões.
 
-## Development server
+Exibição de Resultados: Após a filtragem, os resultados são exibidos em uma tabela. Cada linha da tabela representa uma região e inclui informações como o nome da região, as espécies presentes e seu status, a temperatura da água, o nível de poluição e o pH.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Filtragem Flexível: Se uma região com a temperatura exata da água ou pH não for encontrada, a aplicação retornará a região com a temperatura da água ou pH mais próximo do valor solicitado. Isso permite uma maior flexibilidade na filtragem e garante que os usuários sempre recebam resultados úteis.
