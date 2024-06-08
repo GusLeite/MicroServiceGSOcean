@@ -1,4 +1,4 @@
-Projeto de Filtragem de Regiões
+<h1>Projeto de Filtragem de Regiões</h1>
 Este projeto é uma aplicação web que permite aos usuários filtrar regiões com base em vários critérios ambientais. Ele foi construído usando Angular.
 
 Funcionalidades
