@@ -2,28 +2,64 @@
   <h1>Filters</h1>
   <ul class="d-flex justify-content-between">
     <li>
-      <select name="Region">
-        <option value="">Select a region</option>
+      <h4>Region</h4>
+      <select name="Region" [(ngModel)]="regiaoFilter">
+        <option>All</option>
+        <option *ngFor="let region of regioesOpcoes">{{region}}</option>
       </select>
     </li>
     <li>
-      <select name="Option2">
-        <option value="">Select an option</option>
+      <h4>Especie</h4>
+      <select name="Species" [(ngModel)]="especieFilter">
+        <option>All</option>
+        <option *ngFor="let especie of especies">{{especie.nome}}</option>
       </select>
     </li>
     <li>
-      <select name="Option3">
-        <option value="">Select an option</option>
+      <h4>Conservation Status</h4>
+      <select name="Conservation-Status" [(ngModel)]="statusConservacaoFilter">
+        <option>All</option>
+        <option *ngFor="let status of statusConservacao">{{status}}</option>
       </select>
     </li>
     <li>
-      <input type="text" name="Input1" placeholder="Enter text">
+      <h4>Pollution Levels</h4>
+      <select name="Pollution-Levels" [(ngModel)]="nivelPoluicaoFilter">
+        <option>All</option>
+        <option *ngFor="let nivel of niveisPoluicao">{{nivel}}</option>
+      </select>
     </li>
     <li>
-      <input type="text" name="Input2" placeholder="Enter text">
+      <h4>Water Temperature</h4>
+      <input type="string" [(ngModel)]="temperaturaAguaFilter" name="temperaturaAgua" placeholder="Any">
     </li>
     <li>
-      <input type="text" name="Input3" placeholder="Enter text">
+      <h4>pH</h4>
+      <input type="string" [(ngModel)]="pHFilter" name="ph" placeholder="Any">
     </li>
   </ul>
-</div>
+  <button class="btn btn-primary" (click)="getFiltrar()">Search</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Região</th>
+        <th scope="col">Espécie e Status</th>
+        <th scope="col">Temperatura da Água</th>
+        <th scope="col">Nível de Poluição</th>
+        <th scope="col">pH</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let regiao of regioesFiltrada; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ regiao.regiao }}</td>
+        <td>
+          <p *ngFor="let especie of regiao.especies">{{especie.nome}} - {{especie.status}}</p>
+        </td>
+        <td>{{ regiao.temperaturaAgua }}</td>
+        <td>{{ regiao.nivelPoluicao}}</td>
+        <td>{{ regiao.pH }}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,6 +1,7 @@
 export enum StatusDeConservacao {
-  criticamenteAmeaçado,
-  ameaçada,
-  vulnevel,
-  menosPreocupante
+  criticamenteAmeaçado = 'Criticamente ameaçado',
+  ameaçada = 'Ameaçada',
+  vulnevel = 'Vulnerável',
+  menosPreocupante = 'Menos preocupante',
+  qualquer = 'Qualquer'
 }
